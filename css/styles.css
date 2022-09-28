@@ -128,6 +128,8 @@ font-size: 14px;
 line-height: 1.14;
 letter-spacing: 0.02em;
 text-decoration: none;
+
+transition: color, 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .top-nav .link:hover,
@@ -156,6 +158,8 @@ font-size: 14px;
 line-height: 1.14;
 letter-spacing: 0.02em;
 text-decoration: none;
+
+transition: color, fill, 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .top-contacts .link:hover,
@@ -343,6 +347,8 @@ border-radius: 50%;
 margin-right: 10px;
 align-items: center;
 justify-content: center;
+
+transition: background-color, fill, 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-com .link:hover,
@@ -370,6 +376,8 @@ border: 1px solid currentColor;
 border-radius: 4px;
 padding: 16px 32px;
 fill: currentColor;
+
+transition: border-color, fill, 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients .item .link:hover,
@@ -404,6 +412,8 @@ letter-spacing: 0.03em;
 padding: 6px 22px;
 min-height: 38px;
 min-width: 73px;
+
+transition: background-color, color, box-shadow, 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-port.current,
@@ -460,6 +470,8 @@ width: 370px;
 background: var(--white-color);
 margin-right: 30px;
 margin-bottom: 30px;
+
+transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .port-img .item:hover,
@@ -506,6 +518,8 @@ font-size: 14px;
 line-height: 1.71;
 letter-spacing: 0.03em;
 text-decoration: none;
+
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address:hover,
@@ -550,6 +564,8 @@ list-style: none;
     width: 44px;
     height: 44px;
     background-color: var(--background);
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-social .link:hover,
