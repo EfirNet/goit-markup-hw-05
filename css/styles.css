@@ -22,7 +22,13 @@
 
     --gradient: rgba(47, 48, 58, 0.4);
 
+    --gradient-about: rgba(47, 48, 58, 0.8);
+
     --shadow: rgba(0, 0, 0, 0.15);
+
+    --accent-gradient: rgba(33, 150, 243, 0.9);
+
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -70,18 +76,18 @@ padding-bottom: 94px
 padding-bottom: 0;
 }
 
+
+
 /* Header */
 
-.top {
-    display: flex;
-    width: 1170px;
-    margin: 0 auto;
-}
-
-.header {
+.header-border {
     max-width: 1600px;
     margin: 0 auto;
     border-bottom: 1px solid var(--border-bottom);
+}
+
+.disp-flex {
+    display: flex;
 }
 
 /* logo */
@@ -103,7 +109,7 @@ text-decoration: none;
 color: var(--black-color);
 }
 
-.top-menu {
+.hmenu {
     display: flex;
     align-items: center;
     }
@@ -116,12 +122,14 @@ color: var(--black-color);
 
 .top-nav.list {
 list-style: none;
-display: flex;
+}
+
+.top-nav .item {
+margin: 32px 0 0;
 }
 
 .top-nav .link {
-display: block;
-padding: 24px 0;
+padding: 32px 0 28px;
 color: var(--title-text-color);
 font-weight: 500;
 font-size: 14px;
@@ -129,11 +137,22 @@ line-height: 1.14;
 letter-spacing: 0.02em;
 text-decoration: none;
 
-transition: color, 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: background-color, color, 250ms var(--timing-function);
 }
 
+
+.current::after {
+    content: "";
+    display: block;
+    margin-top: 28px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+
+   }
+
+.top-nav .current,
 .top-nav .link:hover,
-.top-nav .link.current,
 .top-nav .link:focus {
 color: var(--accent-color);
 }
@@ -141,6 +160,7 @@ color: var(--accent-color);
 .top-nav.list .item + .item {
     margin-left: 50px;
 }
+
 
 /* Контакти link */
 
@@ -159,7 +179,7 @@ line-height: 1.14;
 letter-spacing: 0.02em;
 text-decoration: none;
 
-transition: color, fill, 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: color, fill, 250ms var(--timing-function);
 }
 
 .top-contacts .link:hover,
@@ -282,10 +302,27 @@ border-radius: 4px;
     margin: auto;
 }
   
-/* Контейнер Чим ми займаємось (doing) */
+/* Секция "Чим ми займаємось" (About) */
 
-.list .doing:not(:last-child) {
+.about .item:not(:last-child) {
 margin-right: 30px;
+}
+
+.about .item {
+    position: relative;
+}
+
+.about .title {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    width: 370px;
+    height: 70px;
+    background-color: var(--gradient-about);
+    color: var(--white-color);
+    /* outline: 1px solid tomato; */
+    text-align: center;
+    padding: 27px 0;
 }
 
 /* Секция Наша команда COMmand */
@@ -348,7 +385,7 @@ margin-right: 10px;
 align-items: center;
 justify-content: center;
 
-transition: background-color, fill, 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: background-color, fill, 250ms var(--timing-function);
 }
 
 .social-com .link:hover,
@@ -377,7 +414,7 @@ border-radius: 4px;
 padding: 16px 32px;
 fill: currentColor;
 
-transition: border-color, fill, 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: border-color, fill, 250ms var(--timing-function);
 }
 
 .clients .item .link:hover,
@@ -413,10 +450,10 @@ padding: 6px 22px;
 min-height: 38px;
 min-width: 73px;
 
-transition: background-color, color, box-shadow, 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: background-color, color, box-shadow, 250ms var(--timing-function);
 }
 
-.button-port.current,
+.button-port.current-btn,
 .button-port:hover,
 .button-port:focus {
 background-color: var(--accent-color);
@@ -434,6 +471,41 @@ justify-content: center;
 }
 
 /* section PORTfolio */
+
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+background-color: var(--accent-gradient);
+    transform: translateY(100%);
+    transition: transform 250ms var(--timing-function);
+}
+
+.port-img .item:hover .hover-overlay {
+    transform: translateY(0);
+}
+
+.port-img .port-desc {
+width: 370px;
+height: 294px;
+position: relative;
+overflow: hidden;
+}
+
+.port-img.list {
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.port-description {
+    padding: 63px 24px;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    color: var(--white-color);
+}
 
 .port-img .content-item {
 padding: 20px 24px;
@@ -454,10 +526,6 @@ letter-spacing: 0.06em;
  letter-spacing: 0.03em;
 }
 
-.port-img.list {
-flex-wrap: wrap;
-display: flex;
-}
 
 .content-item {
 border-bottom: 1px solid var(--border);
@@ -471,7 +539,7 @@ background: var(--white-color);
 margin-right: 30px;
 margin-bottom: 30px;
 
-transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: box-shadow 250ms var(--timing-function);
 }
 
 .port-img .item:hover,
@@ -519,7 +587,7 @@ line-height: 1.71;
 letter-spacing: 0.03em;
 text-decoration: none;
 
-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: color 250ms var(--timing-function);
 }
 
 .address:hover,
@@ -565,7 +633,7 @@ list-style: none;
     height: 44px;
     background-color: var(--background);
 
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms var(--timing-function);
 }
 
 .footer-social .link:hover,
