@@ -601,6 +601,7 @@ width: 370px;
 background: var(--white-color);
 margin-right: 30px;
 margin-bottom: 30px;
+cursor: pointer;
 
 transition: box-shadow 250ms var(--timing-function);
 }
