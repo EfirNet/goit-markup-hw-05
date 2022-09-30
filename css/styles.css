@@ -88,6 +88,9 @@ padding-bottom: 0;
     height: 100%;
     background-color: var(--backdrop);
     z-index: 2;
+
+    opacity: 1;
+    transition: opacity 250ms var(--timing-function);
 }
 
 .close {
@@ -112,11 +115,15 @@ padding-bottom: 0;
     visibility: inherit;
 }
 
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
 
     min-height: 528px;
     min-width: 581px;
@@ -127,6 +134,7 @@ padding-bottom: 0;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     z-index: 2;
+    transition: opacity 250ms var(--timing-function);
 
 }
 
