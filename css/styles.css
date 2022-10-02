@@ -378,11 +378,8 @@ height: 120px;
 margin-bottom: 30px;
 background-color: var(--bg-our-color);
 border-radius: 4px;
-}
-
-.icon {
-    display: block;
-    margin: auto;
+justify-content: center;
+align-items: center;
 }
   
 /* Секция "Чим ми займаємось" (About) */
@@ -721,6 +718,8 @@ list-style: none;
     width: 44px;
     height: 44px;
     background-color: var(--background);
+    justify-content: center;
+    align-items: center;
 
     transition: background-color 250ms var(--timing-function);
 }
