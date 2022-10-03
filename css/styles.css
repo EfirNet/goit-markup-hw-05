@@ -276,6 +276,7 @@ color 250ms var(--timing-function);
     border-radius: 2px;
     background-color: var(--accent-color);
     transition: width 250ms var(--timing-function);
+    
    }
 
 .current::after {
