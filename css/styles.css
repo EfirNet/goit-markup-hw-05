@@ -105,9 +105,9 @@ padding-bottom: 0;
     height: 100%;
     background-color: var(--backdrop);
     z-index: 2;
-
+    visibility: visible;
     opacity: 1;
-    transition: opacity 250ms var(--timing-function);
+    transition: opacity 250ms var(--timing-function), visibility 250ms var(--timing-function);
 }
 
 .close {
@@ -129,7 +129,6 @@ padding-bottom: 0;
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
-    visibility: inherit;
 }
 
 .backdrop.is-hidden .modal {
