@@ -236,34 +236,44 @@ color: var(--black-color);
     align-items: center;
     }
 
-/* nav */
+/* Меню NAV */
 
 .nav {
     margin-left: 93px;
-}
-
-.top-nav.list {
-list-style: none;
 }
 
 .top-nav .item {
 margin: 32px 0 0;
 }
 
+.top-nav.list .item + .item {
+    margin-left: 50px;
+}
+
+
 .top-nav .link {
+/* position: relative; */
 padding: 32px 0 28px;
+
 color: var(--title-text-color);
 font-weight: 500;
 font-size: 14px;
 line-height: 1.14;
 letter-spacing: 0.02em;
-text-decoration: none;
 
-transition: background-color, color, 250ms var(--timing-function);
+/* outline: transparent; */
+
+transition: background-color 250ms var(--timing-function), 
+color 250ms var(--timing-function);
 }
 
+/* .current:hover::after {
+    width: 100%;
+} */
 
 .current::after {
+    /* position: absolute; */
+    /* width: 0; */
     content: "";
     display: block;
     margin-top: 28px;
@@ -280,9 +290,8 @@ transition: background-color, color, 250ms var(--timing-function);
 color: var(--accent-color);
 }
 
-.top-nav.list .item + .item {
-    margin-left: 50px;
-}
+
+
 
 
 /* Контакти link */
@@ -302,7 +311,8 @@ line-height: 1.14;
 letter-spacing: 0.02em;
 text-decoration: none;
 
-transition: color, fill, 250ms var(--timing-function);
+transition: color 250ms var(--timing-function), 
+fill 250ms var(--timing-function);;
 }
 
 .top-contacts .link:hover,
@@ -512,7 +522,8 @@ margin-right: 10px;
 align-items: center;
 justify-content: center;
 
-transition: background-color, fill, 250ms var(--timing-function);
+transition: background-color 250ms var(--timing-function), 
+fill 250ms var(--timing-function);
 }
 
 .social-com .link:hover,
@@ -541,7 +552,8 @@ border-radius: 4px;
 padding: 16px 32px;
 fill: currentColor;
 
-transition: border-color, fill, 250ms var(--timing-function);
+transition: border-color 250ms var(--timing-function), 
+fill 250ms var(--timing-function);
 }
 
 .clients .item .link:hover,
@@ -577,7 +589,9 @@ padding: 6px 22px;
 min-height: 38px;
 min-width: 73px;
 
-transition: background-color, color, box-shadow, 250ms var(--timing-function);
+transition: background-color 250ms var(--timing-function), 
+color 250ms var(--timing-function), 
+box-shadow 250ms var(--timing-function);
 }
 
 .button-port.current-btn,
