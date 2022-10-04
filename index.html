@@ -25,24 +25,52 @@
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
-        <form>
-          <h2 class="form-description">Залиште свої дані, ми вам передзвонимо</h2>
+
+        <!-- Форма в модальном окне -->
+
+        <form class="form">
+          <h2 class="form__title">Залиште свої дані, ми вам передзвонимо</h2>
         <div class="inputs">
-          <label for="name">Ім'я</label>
-        <input type="text" name="username" id="name">
-
-        <label for="telephone">Телефон</label>
-        <input type="tel" name="tel" id="telephone">
-
-        <label for="e-mail">Пошта</label>
-        <input type="email" name="email" id="e-mail">
+          
+             <label for="name" class="form__label">Ім'я</label>
+            <div class="form__field"><input type="text" class="form__input" name="username" id="name" placeholder=" ">
+            <span class="form__icon"><svg class="icon" width="18" height="18">
+              <use href="./images/icons.svg#icon-person-black"></use></svg
+            ></span>
+          </div>
         
-        <label for="e-mail">Коментар</label>
-        <textarea name="text" id="comment" cols="10" rows="10" placeholder="Введіть текст"></textarea>
+           <label for="telephone" class="form__label">Телефон</label>
+            <div class="form__field"><input type="tel" class="form__input" name="tel" id="telephone" placeholder=" ">
+            <span class="form__icon"><svg class="icon" width="18" height="18">
+              <use href="./images/icons.svg#icon-phone-black"></use></svg
+            ></span>
+            </div>
+        
+            <label for="e-mail" class="form__label">Пошта</label>
+           <div class="form__field"><input type="email" class="form__input" name="email" id="e-mail" placeholder=" ">
+           <span class="form__icon"><svg class="icon" width="18" height="18">
+            <use href="./images/icons.svg#icon-email-black"></use></svg
+          ></span>
+           </div>
+        
+            <label for="comment" class="form__label">Коментар</label>
+            <div class="form__field"><textarea name="text" class="form__textarea" id="comment" rows="10" placeholder="Введіть текст"></textarea>
         </div>
+        <div class="form__check">
+          <input type="checkbox" class="form__checkbox" name="policy" id="policy">
+          <label for="policy" class="form__label__check">Погоджуюся з розсилкою та приймаю Умови договору</label>
+        </div>   
+
+      </div>
+    
+      <button type="submit" class="form__button">
+        Відправити
+      </button>
         </form>
       </div>
     </div>
+
+
     <!-- Шапка сайту -->
     <header class="header-border">
       <div class="container disp-flex">
